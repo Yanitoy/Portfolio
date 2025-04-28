@@ -1,38 +1,238 @@
-body {
-  font-family: Arial, sans-serif;
+/* General Reset and Box Sizing */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header, section, footer {
-  padding: 20px;
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-header {
-  background-color: #333;
-  color: white;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7eee0;  /* Warm off-white background */
+  color: #3d3d3d;
+  line-height: 1.6;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-section {
-  margin-top: 20px;
-}
-
-.project {
-  margin-bottom: 15px;
+h1, h2, h3 {
+  color: #8b4513;  /* Warm brown for headers */
 }
 
 a {
-  color: blue;
+  color: #d35400;  /* Rich warm orange for links */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
+  color: #e67e22;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: rgba(139, 69, 19, 0.9);  /* Transparent warm brown */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff5e6;  /* Soft off-white text */
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #e67e22;  /* Rich orange on hover */
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+/* Welcome Section */
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e67e22, #d35400);  /* Warm gradient from orange to deep orange */
+  color: #fff5e6;  /* Light warm white text */
+  text-align: center;
+  padding: 20px;
+}
+
+#welcome-section h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+#welcome-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+#profile-link {
+  background-color: #fff5e6;
+  color: #d35400;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#profile-link:hover {
+  background-color: #e67e22;
+  color: #fff5e6;
+  transform: scale(1.1);
+}
+
+/* Projects Section */
+#projects {
+  background-color: #fdf2e9;  /* Warm, light background */
+  padding: 80px 0;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 1s ease;
+}
+
+#projects h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #d35400;  /* Accent orange underline */
+  margin: 10px auto;
+}
+
+.project-tile {
+  display: inline-block;
+  background-color: #fff5e6;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px;
+  max-width: 320px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-tile h3 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.project-tile p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #8b4513;  /* Warm dark brown */
+  color: #fff5e6;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+#contact p {
+  font-size: 1.2rem;
+}
+
+#contact a {
+  color: #e67e22;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  color: #fff5e6;
   text-decoration: underline;
 }
 
+/* Footer */
 footer {
+  background-color: #8b4513;
+  color: #fff5e6;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
   margin-top: 30px;
-  font-size: 14px;
-  color: #666;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #welcome-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  #welcome-section p {
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+  }
+
+  .project-tile {
+    max-width: 100%;
+    margin: 20px 0;
+  }
 }
