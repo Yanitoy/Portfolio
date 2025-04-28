@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
-  <title>Your Name | Web Developer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Brian Rey Vargas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <header>
-    <h1>Hello, I'm Your Name</h1>
-    <p>Entry-Level Web Developer</p>
-  </header>
+
+<nav id="navbar">
+      <ul>
+        <li><a href="#welcome-section">Welcome</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+</nav>
+
+  <section id="welcome-section">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Hi, I'm Brian Rey Vargas, a Freelance Web Developer. I love building websites and applications that solve real-world problems!</p>
+    <p class="tagline">"Turning Ideas into Interactive Digital Experiences"</p>
+    <a id="profile-link" href="https://www.linkedin.com/in/brian-rey-vargas-ab4503141/" target="_blank">Visit my LinkedIn</a>
+  </section>
 
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Project 1 Title</h3>
-      <p>Description of your project. What you built, what tech you used.</p>
-      <a href="#">View Project</a>
-    </div>
-    <div class="project">
-      <h3>Project 2 Title</h3>
-      <p>Description of your project. Highlight your skills.</p>
-      <a href="#">View Project</a>
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-tile">
+        <img src="project1-placeholder.png" alt="Project 1" class="project-img">
+        <h3>First Project</h3>
+        <p>This is my First Favorite Project.</p>
+        <a href="https://github.com/Yanitoy/Apple-Eating-Hole" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-tile">
+        <img src="project2-placeholder.png" alt="Favorite Project" class="project-img">
+        <h3>Favorite Project</h3>
+        <p>This is my Favorite Project.</p>
+        <a href="noprojectyet.com" target="_blank">View Project</a>
+      </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a passionate web developer who enjoys building websites and learning new technologies. I specialize in HTML, CSS, and JavaScript.</p>
-  </section>
-
+  <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <h2>Contact Me</h2>
+    <p>If you’d like to get in touch, email me at <a href="mailto:brianreyfuentesvargas@gmail.com">brianreyfuentesvargas@gmail.com</a>.</p>
+    <p>or call me at
+    <a href="tel:+639151375883">+639151375883</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Your Name. All rights reserved.</p>
+    <p>Connect with me:</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/brian-rey-vargas-ab4503141/" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+      <a href="https://github.com/Yanitoy" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+      <a href="#contact"><img src="email-icon.png" alt="Email"></a>
+    </div>
+    <p>&copy; 2024 Brian Rey Vargas</p>
   </footer>
+
 </body>
 </html>
