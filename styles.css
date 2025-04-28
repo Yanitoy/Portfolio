@@ -184,7 +184,13 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
+/* Footer and Icons */
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
 footer {
   background-color: #8b4513;
   color: #fff5e6;
