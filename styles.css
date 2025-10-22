@@ -11,29 +11,29 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f7eee0;  /* Warm off-white background */
-  color: #3d3d3d;
+  background-color: #f4f6f8;  /* Cool light grey background */
+  color: #1f2933;  /* Deep grey text */
   line-height: 1.6;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 h1, h2, h3 {
-  color: #8b4513;  /* Warm brown for headers */
+  color: #1f4a7c;  /* Professional blue for headers */
 }
 
 a {
-  color: #d35400;  /* Rich warm orange for links */
+  color: #1f7aec;  /* Vivid but professional blue for links */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #e67e22;
+  color: #1558b0;
 }
 
 /* Navigation Bar */
 nav {
-  background-color: rgba(139, 69, 19, 0.9);  /* Transparent warm brown */
+  background-color: rgba(24, 32, 44, 0.95);  /* Semi-transparent deep navy */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -53,7 +53,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff5e6;  /* Soft off-white text */
+  color: #e7edf5;  /* Soft cool white text */
   font-size: 18px;
   text-transform: uppercase;
   padding: 10px 15px;
@@ -61,7 +61,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #e67e22;  /* Rich orange on hover */
+  background-color: rgba(31, 122, 236, 0.15);  /* Subtle blue highlight */
   border-radius: 30px;
   padding: 10px 20px;
 }
@@ -74,8 +74,8 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #e67e22, #d35400);  /* Warm gradient from orange to deep orange */
-  color: #fff5e6;  /* Light warm white text */
+  background: linear-gradient(135deg, #1f2933, #3f4c6b);  /* Professional blue-grey gradient */
+  color: #e7edf5;  /* Light cool white text */
   text-align: center;
   padding: 20px;
 }
@@ -93,8 +93,8 @@ nav ul li a:hover {
 }
 
 #profile-link {
-  background-color: #fff5e6;
-  color: #d35400;
+  background-color: #e7edf5;
+  color: #1f4a7c;
   padding: 12px 25px;
   border-radius: 50px;
   font-weight: bold;
@@ -102,8 +102,8 @@ nav ul li a:hover {
 }
 
 #profile-link:hover {
-  background-color: #e67e22;
-  color: #fff5e6;
+  background-color: #1f7aec;
+  color: #e7edf5;
   transform: scale(1.1);
 }
 
@@ -120,7 +120,7 @@ nav ul li a:hover {
 
 /* Projects Section */
 #projects {
-  background-color: #fdf2e9;  /* Warm, light background */
+  background-color: #eef1f5;  /* Cool, light background */
   padding: 80px 0;
   text-align: center;
 }
@@ -138,24 +138,24 @@ nav ul li a:hover {
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #d35400;  /* Accent orange underline */
+  background-color: #1f7aec;  /* Accent blue underline */
   margin: 10px auto;
 }
 
 .project-tile {
   display: inline-block;
-  background-color: #fff5e6;
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 30px;
   margin: 20px;
   max-width: 320px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(31, 41, 51, 0.12);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-tile:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(31, 41, 51, 0.25);
 }
 
 .project-tile h3 {
@@ -180,8 +180,8 @@ nav ul li a:hover {
 
 /* Contact Section */
 #contact {
-  background-color: #8b4513;  /* Warm dark brown */
-  color: #fff5e6;
+  background-color: #1f2933;  /* Deep blue-grey */
+  color: #e7edf5;
   padding: 80px 0;
   text-align: center;
 }
@@ -196,13 +196,13 @@ nav ul li a:hover {
 }
 
 #contact a {
-  color: #e67e22;
+  color: #4aa3ff;
   font-weight: bold;
   text-decoration: none;
 }
 
 #contact a:hover {
-  color: #fff5e6;
+  color: #b7d9ff;
   text-decoration: underline;
 }
 
@@ -214,8 +214,8 @@ nav ul li a:hover {
 }
 
 footer {
-  background-color: #8b4513;
-  color: #fff5e6;
+  background-color: #18202c;
+  color: #e7edf5;
   text-align: center;
   padding: 30px 0;
   font-size: 0.9rem;
