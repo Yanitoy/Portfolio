@@ -67,6 +67,7 @@ nav ul li a:hover {
 }
 
 /* Welcome Section */
+
 #welcome-section {
   display: flex;
   flex-direction: column;
@@ -104,6 +105,17 @@ nav ul li a:hover {
   background-color: #e67e22;
   color: #fff5e6;
   transform: scale(1.1);
+}
+
+/* Profile Picture Section */
+.profilepic {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensures full logo fits without cropping */
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  max-height: 250px; /* Adjust this depending on your box height */
+  padding: 10px;
 }
 
 /* Projects Section */
@@ -154,6 +166,16 @@ nav ul li a:hover {
 .project-tile p {
   font-size: 1rem;
   margin-bottom: 15px;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensures full logo fits without cropping */
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  max-height: 250px; /* Adjust this depending on your box height */
+  padding: 10px;
 }
 
 /* Contact Section */
