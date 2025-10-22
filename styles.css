@@ -184,7 +184,9 @@ nav.scrolled {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
-  max-width: 1100px;
+  justify-content: center; /* center the grid tracks */
+  justify-items: center;    /* center the cards inside tracks */
+  max-width: 960px;         /* keeps two cards visually centered with balanced gutters */
   margin: 0 auto;
   padding: 0 20px;
 }
