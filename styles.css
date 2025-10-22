@@ -132,18 +132,17 @@ nav.scrolled {
 
 /* Profile Picture Section */
 .profilepic {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Ensures full logo fits without cropping */
+  width: clamp(120px, 18vw, 160px);
+  height: clamp(120px, 18vw, 160px);
+  object-fit: cover; /* fill circle nicely */
   display: block;
-  margin: 0 auto; /* Centers the image horizontally */
-  max-height: 250px; /* Adjust this depending on your box height */
-  padding: 10px; /* creates space for the frame */
-  border-radius: 16px; /* soft corners to match cards */
-  border: 3px solid transparent; /* needed for gradient frame trick */
+  margin: 0 auto; /* center horizontally */
+  padding: 4px; /* space for the circular frame */
+  border-radius: 50%;
+  border: 3px solid transparent; /* enables gradient border */
   background:
     linear-gradient(135deg, #1f2933, #3f4c6b) padding-box,
-    linear-gradient(135deg, #1f7aec, #4aa3ff) border-box; /* subtle blue frame */
+    linear-gradient(135deg, #1f7aec, #4aa3ff) border-box; /* subtle blue ring */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
