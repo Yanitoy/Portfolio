@@ -166,7 +166,10 @@ nav.scrolled {
 }
 
 .project-tile {
-  display: inline-block;
+  display: flex;                 /* enable vertical alignment */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 30px;
@@ -204,6 +207,12 @@ nav.scrolled {
 .project-tile p {
   font-size: 1rem;
   margin-bottom: 15px;
+}
+
+/* Center the Credly description vertically within its card */
+.project-grid .project-tile:nth-child(2) p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .project-img {
