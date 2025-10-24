@@ -193,7 +193,8 @@ nav.scrolled {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   justify-content: center; /* center the grid tracks */
-  justify-items: center;    /* center the cards inside tracks */
+  justify-items: stretch;   /* allow cards to stretch equally */
+  align-items: stretch;     /* equal height rows */
   max-width: 960px;         /* keeps two cards visually centered with balanced gutters */
   margin: 0 auto;
   padding: 0 20px;
@@ -201,6 +202,7 @@ nav.scrolled {
 
 .project-tile { /* ensure tiles fill grid cells */
   width: 100%;
+  height: 100%;
   margin: 0;
 }
 
@@ -216,23 +218,33 @@ nav.scrolled {
 
 .project-tile p {
   font-size: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
-/* Center the Credly description vertically within its card */
-.project-grid .project-tile:nth-child(2) p {
-  margin-top: auto;
-  margin-bottom: auto;
+/* Remove card-specific tweaks for more symmetry */
+.project-grid .project-tile:nth-child(2) p { margin-top: 0; margin-bottom: 16px; }
+
+/* Consistent media area so all cards align */
+.project-media {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
 }
 
 .project-img {
   width: 100%;
-  height: auto;
-  object-fit: contain; /* Ensures full logo fits without cropping */
+  height: 100%;
+  object-fit: contain;
   display: block;
-  margin: 0 auto; /* Centers the image horizontally */
-  max-height: 250px; /* Adjust this depending on your box height */
-  padding: 10px;
+}
+
+/* Keep CTA aligned to the bottom for equal visual weight */
+.project-tile a {
+  margin-top: auto;
 }
 
 /* Contact Section */
@@ -338,7 +350,7 @@ footer {
   }
 
   .project-tile { max-width: 100%; margin: 20px 0; padding: 22px; }
-  .project-img { max-height: 200px; }
+  .project-media { height: 160px; }
   #projects h2 { font-size: 2.25rem; }
   #profile-link { padding: 10px 20px; }
   section { scroll-margin-top: 72px; }
