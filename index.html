@@ -6,10 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Brian Rey Vargas</title>
-  <meta name="description" content="Portfolio of Brian Rey Vargas — freelance web developer crafting professional, performant, and accessible web experiences.">
+  <meta name="description" content="Portfolio of Brian Rey Vargas - freelance web developer crafting professional, performant, and accessible web experiences.">
   <meta name="theme-color" content="#1f2933">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.ico/favicon.ico" type="image/x-icon">
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-touch-icon.png">
+  <link rel="manifest" href="favicon.ico/site.webmanifest">
+  <!-- Performance: preconnect for Calendly -->
+  <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+  <link rel="preconnect" href="https://calendly.com" crossorigin>
+  <!-- Calendly widget assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -25,9 +36,18 @@
 <!--Welcome Section-->
   <section id="welcome-section">
     <!--Profile Picture Section-->
-  <img src="images/profile.png" alt="Profile photo of Brian Rey Vargas" class="profilepic">
+  <img src="images/profile.png" alt="Profile photo of Brian Rey Vargas" class="profilepic" width="220" height="220" decoding="async" fetchpriority="high">
+    <!-- Calendly link widget begin -->
+    <button type="button"
+            id="calendly-button"
+            class="cta-button"
+            aria-label="Schedule a 30 minute meeting"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/brianreyfuentesvargas/30min'});return false;">
+      Schedule time with me
+    </button>
+    <!-- Calendly link widget end -->
     <h1>My Portfolio</h1>
-    <p>Hey there! I'm Brian Rey Vargas, a freelance web developer who loves creating websites that don't just look great — they work seamlessly. My goal is to build solutions that make life a little easier and the web a little better.</p>
+    <p>Hey there! I'm Brian Rey Vargas — a dedicated remote professional and virtual assistant with a passion for helping businesses and individuals stay organized, efficient, and connected. Whether it's managing digital tasks or building seamless web experiences, I focus on delivering reliable results that make everyday work smoother and more productive.</p>
     <p class="tagline">"Turning ideas into interactive digital experiences"</p>
     <a id="profile-link" href="https://www.linkedin.com/in/brian-rey-vargas-ab4503141/" target="_blank" rel="noopener noreferrer">Visit my LinkedIn</a>
   </section>
@@ -38,7 +58,7 @@
     <div class="project-grid">
       <div class="project-tile">
         <div class="project-media">
-          <img src="images/WordPress.png" alt="WordPress site preview" class="project-img">
+          <img src="images/WordPress.png" alt="WordPress site preview" class="project-img" loading="lazy" decoding="async">
         </div>
         <h3>Featured Project</h3>
         <p>A custom WordPress site focused on clarity and performance.</p>
@@ -49,7 +69,7 @@
 
       <div class="project-tile">
         <div class="project-media">
-          <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=800&q=80" alt="Preview of a modern responsive dashboard" class="project-img">
+          <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=800&q=80" alt="Preview of a modern responsive dashboard" class="project-img" loading="lazy" decoding="async">
         </div>
         <h3>My Projects Dashboards</h3>
         <p>A responsive analytics dashboard built with HTML, CSS, and JavaScript for tracking key metrics.</p>
@@ -82,7 +102,7 @@
     <div class="credentials-grid">
       <div class="project-tile">
         <div class="project-media">
-          <img src="images/Credly.png" alt="Credly badge collection preview" class="project-img">
+          <img src="images/Credly.png" alt="Credly badge collection preview" class="project-img" loading="lazy" decoding="async">
         </div>
         <h3>Credentials</h3>
         <p>These are my credentials and certificates.</p>

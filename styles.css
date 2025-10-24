@@ -17,6 +17,11 @@ body {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+/* Layout variables */
+:root {
+  --nav-height: 72px;
+}
+
 /* Custom black cursor (uses a small inline SVG dot) */
 html {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='4' cy='4' r='4' fill='%23000'/></svg>") 4 4, auto;
@@ -27,7 +32,7 @@ h1, h2, h3 {
 }
 
 /* Offset scroll for sticky nav when jumping to anchors */
-section { scroll-margin-top: 90px; }
+section { scroll-margin-top: calc(var(--nav-height) + 18px); }
 
 a {
   color: #1f7aec;  /* Vivid but professional blue for links */
@@ -94,11 +99,13 @@ nav.scrolled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - var(--nav-height));
   background: linear-gradient(135deg, #1f2933, #3f4c6b);  /* Professional blue-grey gradient */
   color: #e7edf5;  /* Light cool white text */
   text-align: center;
   padding: 20px;
+  padding-top: calc(var(--nav-height) + 20px); /* ensure content clears sticky nav */
+  gap: 16px; /* keep vertical rhythm symmetric */
 }
 
 #welcome-section h1 {
@@ -133,10 +140,30 @@ nav.scrolled {
   transform: scale(1.1);
 }
 
+/* Primary CTA button (e.g., Calendly) */
+.cta-button {
+  background-color: #e7edf5;
+  color: #1f4a7c;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1f7aec;
+  color: #e7edf5;
+  transform: scale(1.06);
+}
+
 /* Profile Picture Section */
 .profilepic {
-  width: clamp(120px, 18vw, 160px);
-  height: clamp(120px, 18vw, 160px);
+  width: clamp(160px, 24vw, 220px);
+  height: clamp(160px, 24vw, 220px);
   object-fit: cover; /* fill circle nicely */
   display: block;
   margin: 0 auto; /* center horizontally */
