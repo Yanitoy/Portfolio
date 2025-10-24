@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Based on the freeCodeCamp "Cafe Menu" activity with slight modifications:
+    - Cleaned structure & unified classes
+    - Improved accessibility and semantics
+    - Added responsive, modern styling via styles.css
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camper Cafe — Menu</title>
+  <meta name="description" content="Camper Cafe menu featuring coffee and desserts. A learning project based on freeCodeCamp with slight modifications." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="menu" role="document">
+    <header class="site-header">
+      <h1 class="title">CAMPER CAFE</h1>
+      <p class="established" aria-label="Established 2020">Est. 2020</p>
+    </header>
+
+    <main>
+      <hr class="rule" aria-hidden="true">
+
+      <section aria-labelledby="coffee-heading" class="section">
+        <h2 id="coffee-heading">Coffee</h2>
+
+        <img class="section-image"
+             src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg"
+             alt="Coffee cup icon" width="80" height="80" loading="lazy" />
+
+        <article class="item">
+          <p class="item-name">French Vanilla</p>
+          <p class="price" aria-label="price">$3.00</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Caramel Macchiato</p>
+          <p class="price" aria-label="price">$3.75</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Pumpkin Spice</p>
+          <p class="price" aria-label="price">$3.50</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Hazelnut</p>
+          <p class="price" aria-label="price">$4.00</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Mocha</p>
+          <p class="price" aria-label="price">$4.50</p>
+        </article>
+      </section>
+
+      <section aria-labelledby="desserts-heading" class="section">
+        <h2 id="desserts-heading">Desserts</h2>
+
+        <img class="section-image"
+             src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg"
+             alt="Slice of pie icon" width="80" height="80" loading="lazy" />
+
+        <article class="item">
+          <p class="item-name">Donut</p>
+          <p class="price" aria-label="price">$1.50</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Cherry Pie</p>
+          <p class="price" aria-label="price">$2.75</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Cheesecake</p>
+          <p class="price" aria-label="price">$3.00</p>
+        </article>
+
+        <article class="item">
+          <p class="item-name">Cinnamon Roll</p>
+          <p class="price" aria-label="price">$2.50</p>
+        </article>
+      </section>
+    </main>
+
+    <hr class="rule bottom" aria-hidden="true">
+
+    <footer class="site-footer">
+      <p>
+        <a href="https://www.freecodecamp.org" target="_blank" rel="noopener noreferrer">
+          Visit our website
+        </a>
+      </p>
+      <p class="address">123 Free Code Camp Drive</p>
+      <p class="credit">
+        <small>
+          Built from the freeCodeCamp <em>Cafe Menu</em> project with slight modifications for learning.
+        </small>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

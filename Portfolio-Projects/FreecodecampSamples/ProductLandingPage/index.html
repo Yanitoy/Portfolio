@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brian's Creations — Vocal Training</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header id="header" class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="#hero">
+        <img id="header-img" src="https://via.placeholder.com/200x40?text=Brian%27s+Creations" alt="Brian's Creations logo" />
+      </a>
+      <nav id="nav-bar" aria-label="Primary">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#how-it-works">How It Works</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero / CTA -->
+    <section id="hero" class="hero section">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Vocal training that builds power, control, and confidence</h1>
+        <p class="hero-sub">Handcrafted lessons tailored to your voice.</p>
+
+        <form id="form" class="cta-form" action="https://www.freecodecamp.com/email-submit" method="post">
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required />
+          <input id="submit" type="submit" value="Get Started" />
+        </form>
+
+        <ul class="trust-badges" aria-label="Highlights">
+          <li>✓ Beginner to Pro</li>
+          <li>✓ Flexible schedules</li>
+          <li>✓ Online or In‑person</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feat-icon" aria-hidden="true">🎤</div>
+            <h3>Premium Techniques</h3>
+            <p>Breath support, resonance, and range strategies used by working vocalists.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feat-icon" aria-hidden="true">⚡</div>
+            <h3>Fast Progress</h3>
+            <p>Structured warm‑ups and micro‑goals so you feel improvement every week.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feat-icon" aria-hidden="true">💪</div>
+            <h3>Healthy Voice</h3>
+            <p>Technique‑first coaching to protect your instrument and avoid strain.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works (with required iframe#video) -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="lead">Warm‑up, technique, and application—see a quick lesson overview.</p>
+
+        <div class="video-wrap">
+          <!-- Using the embed URL format; id="video" is required by FCC tests -->
+          <iframe
+            id="video"
+            title="Vocal Training Sample Video"
+            src="https://www.youtube.com/embed/tJrgb7HK0cY"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2 class="section-title">Pricing</h2>
+        <div class="cards">
+          <article class="card">
+            <header class="card-head">
+              <h3>Basic Lesson</h3>
+              <p class="price"><span class="currency">$</span>60</p>
+            </header>
+            <ul class="card-features">
+              <li>4 sessions / month</li>
+              <li>Personalized warm‑ups</li>
+              <li>Email feedback</li>
+            </ul>
+            <button class="btn-select" type="button">Select</button>
+          </article>
+
+          <article class="card">
+            <header class="card-head">
+              <h3>Pro Lesson</h3>
+              <p class="price"><span class="currency">$</span>120</p>
+            </header>
+            <ul class="card-features">
+              <li>8 sessions / month</li>
+              <li>Custom exercises + recordings</li>
+              <li>Priority feedback</li>
+            </ul>
+            <button class="btn-select" type="button">Select</button>
+          </article>
+
+          <article class="card">
+            <header class="card-head">
+              <h3>Elite Coaching</h3>
+              <p class="price"><span class="currency">$</span>240</p>
+            </header>
+            <ul class="card-features">
+              <li>12 sessions / month</li>
+              <li>Performance prep + song work</li>
+              <li>1:1 video feedback</li>
+            </ul>
+            <button class="btn-select" type="button">Select</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p class="copy">© <span id="year"></span> Brian's Creations</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

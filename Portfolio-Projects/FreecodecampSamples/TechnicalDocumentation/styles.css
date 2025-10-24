@@ -1,0 +1,110 @@
+/* styles.css — FCC Tech Doc (two-file build, no JS) */
+:root{
+  --bg:#f7f7f7; --panel:#ffffff; --text:#1f2937; --muted:#4b5563; --border:#e5e7eb; --link:#2563eb; --code:#0b10200a; --active:#e8eefc;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,Monaco,"Liberation Mono","Courier New",monospace}
+
+/* Fixed left navbar (meets FCC requirement #21) */
+#navbar{position:fixed;top:0;left:0;bottom:0;width:300px;overflow-y:auto;background:var(--panel);border-right:1px solid var(--border);padding:1rem 0}
+#navbar>header{font-weight:700;padding:0 1.25rem .5rem}
+#navbar ul{list-style:none;margin:0;padding:0}
+#navbar li{border-top:1px solid var(--border)}
+#navbar a.nav-link{display:block;padding:.75rem 1.25rem;color:var(--text)}
+#navbar a.nav-link:hover{background:#f2f4f7}
+
+/* Main column */
+#main-doc{margin-left:300px;padding:2rem clamp(1rem,2.5vw,3rem)}
+.main-section{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:0 0 1.25rem}
+.main-section>header{font-size:1.4rem;font-weight:700;margin:0 0 .5rem}
+.main-section p{margin:.5rem 0}
+.main-section ul{margin:.25rem 0 .75rem 1.25rem}
+pre,.main-section code{display:block;background:var(--code);padding:.75rem 1rem;border-radius:6px;overflow:auto}
+#site-footer{color:var(--muted);margin:2rem 0 1rem;text-align:center}
+
+/* Hide documentation figures/images when present */
+.doc-figure{display:none}
+
+/* Hide original Overview text; show rewritten block */
+#Overview>p,#Overview>code{display:none}
+
+/* Smooth scrolling */
+html{scroll-behavior:smooth}
+
+/* Pure-CSS active link highlighting using :has() and :target */
+/* Default highlight first link when no hash is present */
+body:not(:has(:target)) #navbar a[href="#Overview"],
+/* Highlight by section target */
+body:has(#Overview:target) #navbar a[href="#Overview"],
+body:has(#Manananggal:target) #navbar a[href="#Manananggal"],
+body:has(#Tiyanak:target) #navbar a[href="#Tiyanak"],
+body:has(#Wak_Wak:target) #navbar a[href="#Wak_Wak"],
+body:has(#Sigbin:target) #navbar a[href="#Sigbin"],
+body:has(#Pugot:target) #navbar a[href="#Pugot"],
+body:has(#Mangkukulam:target) #navbar a[href="#Mangkukulam"]{
+  background:var(--active);font-weight:600
+}
+
+/* Visual cue for currently targeted section */
+.main-section:target{outline:2px solid var(--link);outline-offset:4px}
+
+/* Media query (kept minimal for FCC #22). We still keep nav fixed left. */
+@media (max-width: 680px){
+  #navbar{width:240px}
+  #main-doc{margin-left:240px;padding:1.25rem}
+}
+/* styles.css — FCC Tech Doc (two-file build, no JS) */
+:root{
+  --bg:#f7f7f7; --panel:#ffffff; --text:#1f2937; --muted:#4b5563; --border:#e5e7eb; --link:#2563eb; --code:#0b10200a; --active:#e8eefc;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,Monaco,"Liberation Mono","Courier New",monospace}
+
+/* Fixed left navbar (meets FCC requirement #21) */
+#navbar{position:fixed;top:0;left:0;bottom:0;width:300px;overflow-y:auto;background:var(--panel);border-right:1px solid var(--border);padding:1rem 0}
+#navbar>header{font-weight:700;padding:0 1.25rem .5rem}
+#navbar ul{list-style:none;margin:0;padding:0}
+#navbar li{border-top:1px solid var(--border)}
+#navbar a.nav-link{display:block;padding:.75rem 1.25rem;color:var(--text)}
+#navbar a.nav-link:hover{background:#f2f4f7}
+
+/* Main column */
+#main-doc{margin-left:300px;padding:2rem clamp(1rem,2.5vw,3rem)}
+.main-section{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:0 0 1.25rem}
+.main-section>header{font-size:1.4rem;font-weight:700;margin:0 0 .5rem}
+.main-section p{margin:.5rem 0}
+.main-section ul{margin:.25rem 0 .75rem 1.25rem}
+pre,.main-section code{display:block;background:var(--code);padding:.75rem 1rem;border-radius:6px;overflow:auto}
+#site-footer{color:var(--muted);margin:2rem 0 1rem;text-align:center}
+
+/* Smooth scrolling */
+html{scroll-behavior:smooth}
+
+/* Pure-CSS active link highlighting using :has() and :target */
+/* Default highlight first link when no hash is present */
+body:not(:has(:target)) #navbar a[href="#Overview"],
+/* Highlight by section target */
+body:has(#Overview:target) #navbar a[href="#Overview"],
+body:has(#Manananggal:target) #navbar a[href="#Manananggal"],
+body:has(#Tiyanak:target) #navbar a[href="#Tiyanak"],
+body:has(#Wak_Wak:target) #navbar a[href="#Wak_Wak"],
+body:has(#Sigbin:target) #navbar a[href="#Sigbin"],
+body:has(#Pugot:target) #navbar a[href="#Pugot"],
+body:has(#Mangkukulam:target) #navbar a[href="#Mangkukulam"]{
+  background:var(--active);font-weight:600
+}
+
+/* Visual cue for currently targeted section */
+.main-section:target{outline:2px solid var(--link);outline-offset:4px}
+
+/* Media query (kept minimal for FCC #22). We still keep nav fixed left. */
+@media (max-width: 680px){
+  #navbar{width:240px}
+  #main-doc{margin-left:240px;padding:1.25rem}
+}

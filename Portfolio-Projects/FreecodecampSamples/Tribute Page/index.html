@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lara Croft — Tribute</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A tribute to Lara Croft, the Tomb Raider — timeline, quick facts, quotes, and more." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="main">
+    <h1 id="title">Lara Croft</h1>
+    <p class="subtitle">The Tomb Raider</p>
+
+    <!-- Required image container -->
+    <figure id="img-div">
+      <img
+        id="image"
+        src="https://i.pinimg.com/736x/e9/58/c4/e958c421698754e1be852137559b0f1f.jpg"
+        alt="Lara Croft standing confidently, classic Tomb Raider style."
+      />
+      <figcaption id="img-caption">“I make my own luck.” — Lara Croft</figcaption>
+    </figure>
+
+    <!-- Quick Facts -->
+    <section class="facts" aria-label="Quick facts about Lara Croft">
+      <h2 class="visually-hidden">Quick Facts</h2>
+      <ul class="facts-grid">
+        <li><span class="label">First appearance:</span> 1996 (Tomb Raider)</li>
+        <li><span class="label">Origin:</span> London, England</li>
+        <li><span class="label">Occupation:</span> Archaeologist, Adventurer</li>
+        <li><span class="label">Known for:</span> Daring expeditions and ingenuity</li>
+      </ul>
+    </section>
+
+    <!-- Required tribute info section -->
+    <section id="tribute-info">
+      <div class="timeline-header">
+        <h3 id="headline">Short Timeline of Lara Croft</h3>
+        <button id="toggle-all" class="btn" type="button" aria-expanded="false">Expand all</button>
+      </div>
+      <ul class="timeline" role="list">
+        <li>
+          <span class="year">1996</span>
+          <span class="title">Tomb Raider</span>
+          <span class="details">Lara’s debut redefined 3D action‑adventure games.</span>
+        </li>
+        <li>
+          <span class="year">1997</span>
+          <span class="title">Tomb Raider II</span>
+          <span class="details">Introduced vehicles and larger, more varied locations.</span>
+        </li>
+        <li>
+          <span class="year">1998</span>
+          <span class="title">Tomb Raider III</span>
+          <span class="details">Non‑linear level paths and expanded traversal.</span>
+        </li>
+        <li>
+          <span class="year">1999</span>
+          <span class="title">The Last Revelation</span>
+          <span class="details">A darker story with Egypt‑focused exploration.</span>
+        </li>
+        <li>
+          <span class="year">2000</span>
+          <span class="title">Chronicles</span>
+          <span class="details">Anthology of Lara’s past adventures.</span>
+        </li>
+        <li>
+          <span class="year">2003</span>
+          <span class="title">The Angel of Darkness</span>
+          <span class="details">A bold, experimental entry with RPG elements.</span>
+        </li>
+      </ul>
+
+      <blockquote cite="https://tombraider.fandom.com/wiki/Original_Timeline">
+        <p>
+          The initial Lara Croft is portrayed as an explorer with a take‑no‑prisoners attitude who
+          pursued adventure for the thrill. Raised in British aristocracy, a plane crash and wilderness
+          survival changed her path. Bored by upper‑class society, she funded expeditions through writing
+          and became a gaming icon and a strong female lead.
+        </p>
+        <cite>— Tomb Raider Wiki</cite>
+      </blockquote>
+
+      <p>
+        Learn more on her
+        <a
+          id="tribute-link"
+          href="https://tombraider.fandom.com/wiki/Original_Timeline#Lara_Croft"
+          target="_blank"
+          rel="noopener"
+        >Tomb Raider Wiki entry</a>.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Tribute page for educational use.</p>
+    </footer>
+  </main>
+
+  <button id="back-to-top" class="to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="script.js" defer></script>
+</body>
+</html>

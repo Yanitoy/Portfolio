@@ -1,0 +1,200 @@
+/* Basic resets */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+  /* Offset for fixed header */
+  padding-top: 72px;
+}
+/* Visually hidden (for accessible labels) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); white-space: nowrap; border: 0; }
+
+/* Containers & sections */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+.section {
+  padding: 48px 0;
+}
+.section-title {
+  margin: 0 0 16px;
+  font-size: 1.75rem;
+}
+
+/* Header (required IDs preserved) */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+}
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+#header-img {
+  max-height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Primary nav */
+#nav-bar {
+  display: flex;
+  gap: 12px;
+}
+.nav-link {
+  color: #222;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.nav-link:hover,
+.nav-link:focus {
+  background: #f3f4f6;
+  outline: none;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+}
+.hero-title {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.hero-sub {
+  margin: 0 0 16px;
+  color: #555;
+}
+/* Ensure emoji icons render consistently */
+.feat-icon { font-size: 1.35rem; line-height: 1; }
+/* FCC form IDs preserved: #form, #email, #submit */
+.cta-form {
+  display: flex;
+  gap: 8px;
+  max-width: 620px;
+  margin: 0 auto 12px;
+}
+#email,
+#submit {
+  font: inherit;
+  padding: 12px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+#email {
+  flex: 1;
+}
+#submit {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+  cursor: pointer;
+}
+#submit:hover { opacity: 0.95; }
+
+.trust-badges {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: center;
+  color: #555;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.feature {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+}
+.feat-icon { font-size: 1.25rem; margin-bottom: 6px; }
+
+/* Video */
+.video-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+#video {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* simplifies responsiveness */
+  display: block;
+  border: 0;
+}
+
+/* Pricing */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.card-head { border-bottom: 1px dashed #e5e7eb; padding-bottom: 10px; margin-bottom: 10px; }
+.price { margin: 0; font-size: 1.6rem; font-weight: 700; }
+.card-features { list-style: none; padding: 0; margin: 0 0 12px; color: #555; }
+.btn-select {
+  padding: 10px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-select:hover { opacity: 0.95; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 0 32px;
+  background: #fafafa;
+}
+.footer-wrap {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-nav { display: flex; gap: 12px; }
+.footer-nav a { color: #222; text-decoration: none; padding: 6px 8px; border-radius: 6px; }
+.footer-nav a:hover { background: #f3f4f6; }
+.copy { margin: 0; color: #555; }
+
+/* Anchor offset so fixed header doesn't cover targets */
+#features, #how-it-works, #pricing, #hero {
+  scroll-margin-top: 80px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .cta-form { flex-direction: column; }
+  .features-grid, .cards { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .features-grid, .cards { grid-template-columns: 1fr; }
+}

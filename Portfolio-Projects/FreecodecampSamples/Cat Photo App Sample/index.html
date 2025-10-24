@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="CatPhotoApp — a simple demo page featuring cat photos, lists, and a form."
+    />
+    <title>CatPhotoApp</title>
+    <style>
+      /* Optional tiny polish (keeps FCC structure intact) */
+      :root { color-scheme: light dark; }
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.6; margin: 0; }
+      main { max-width: 70ch; margin: 2rem auto; padding: 0 1rem; }
+      img { max-width: 100%; height: auto; display: block; }
+      figure { margin: 1rem 0; }
+      fieldset { border: 1px solid currentColor; padding: .75rem 1rem; margin-block: 1rem; }
+      footer { border-top: 1px solid currentColor; margin-top: 3rem; padding: 1rem; font-size: .95rem; }
+      .note { background: rgba(0,0,0,.05); padding: .75rem 1rem; border-radius: .5rem; }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>CatPhotoApp</h1>
+
+      <!-- Modification note (clearly states this version was edited) -->
+      <p class="note" role="status" aria-live="polite">
+        This project is a modified version of the original freeCodeCamp CatPhotoApp.
+        Last updated on <time datetime="2025-10-24">October 24, 2025</time>.
+      </p>
+
+      <section aria-labelledby="photos-heading">
+        <h2 id="photos-heading">Cat Photos</h2>
+        <p>
+          Everyone loves
+          <a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">
+            cute cats
+          </a>
+          online!
+        </p>
+        <p>
+          See more
+          <a href="https://freecatphotoapp.com" target="_blank" rel="noopener noreferrer">
+            cat photos
+          </a>
+          in our gallery (opens in a new tab).
+        </p>
+        <a href="https://freecatphotoapp.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+            alt="A cute orange cat lying on its back."
+            loading="lazy"
+          />
+        </a>
+      </section>
+
+      <section aria-labelledby="lists-heading">
+        <h2 id="lists-heading">Cat Lists</h2>
+
+        <h3>Things cats love:</h3>
+        <ul>
+          <li>catnip</li>
+          <li>laser pointers</li>
+          <li>lasagna</li>
+        </ul>
+
+        <figure>
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+            alt="A slice of lasagna on a plate."
+            loading="lazy"
+          />
+          <figcaption>Cats <em>love</em> lasagna.</figcaption>
+        </figure>
+
+        <h3>Top 3 things cats hate:</h3>
+        <ol>
+          <li>flea treatment</li>
+          <li>thunder</li>
+          <li>other cats</li>
+        </ol>
+
+        <figure>
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+            alt="Two tabby kittens sleeping together on a couch."
+            loading="lazy"
+          />
+          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Cat Form</h2>
+        <form action="https://freecatphotoapp.com/submit-cat-photo" method="post">
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+
+            <label for="indoor">
+              <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked />
+              Indoor
+            </label>
+
+            <label for="outdoor">
+              <input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor" />
+              Outdoor
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+
+            <label for="loving">
+              <input id="loving" type="checkbox" name="personality" value="loving" checked />
+              Loving
+            </label>
+
+            <label for="lazy">
+              <input id="lazy" type="checkbox" name="personality" value="lazy" />
+              Lazy
+            </label>
+
+            <label for="energetic">
+              <input id="energetic" type="checkbox" name="personality" value="energetic" />
+              Energetic
+            </label>
+          </fieldset>
+
+          <label for="catphotourl" class="visually-hidden">Cat photo URL</label>
+          <input
+            id="catphotourl"
+            type="url"
+            name="catphotourl"
+            placeholder="Cat photo URL"
+            inputmode="url"
+            required
+          />
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © <span id="year">2025</span> Brian Rey Vargas.
+        Based on <a href="https://www.freecodecamp.org" rel="noopener noreferrer">freeCodeCamp.org</a>.
+      </p>
+      <p>
+        Modified version of the freeCodeCamp CatPhotoApp —
+        <time datetime="2025-10-24">October 24, 2025</time>.
+      </p>
+      <script>
+        // Keep the year current without affecting FCC tests.
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
