@@ -194,7 +194,7 @@ nav.scrolled {
   gap: 24px;
   justify-content: center; /* center the grid tracks */
   justify-items: stretch;   /* allow cards to stretch equally */
-  align-items: stretch;     /* equal height rows */
+  align-items: start;       /* prevent short cards from stretching */
   max-width: 960px;         /* keeps two cards visually centered with balanced gutters */
   margin: 0 auto;
   padding: 0 20px;
@@ -245,6 +245,59 @@ nav.scrolled {
 /* Keep CTA aligned to the bottom for equal visual weight */
 .project-tile a {
   margin-top: auto;
+}
+
+/* Credentials Section */
+#credentials {
+  background-color: #eef1f5;
+  padding: 60px 0 80px;
+  text-align: center;
+}
+
+#credentials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+#credentials h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #1f7aec;
+  margin: 10px auto;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  justify-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* "Coming Soong" disabled pill */
+.cta-soon {
+  margin-top: auto;
+  display: inline-block;
+  background-color: #d1d9e6;
+  color: #4a5a6a;
+  padding: 10px 16px;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+/* Subtle placeholder style for coming card */
+.is-coming .project-media {
+  background: repeating-linear-gradient(45deg, #f3f6fb, #f3f6fb 10px, #e9eef6 10px, #e9eef6 20px);
 }
 
 /* Contact Section */
@@ -371,4 +424,18 @@ footer {
   nav ul li a { font-size: 14px; padding: 6px 10px; }
   #projects h2 { font-size: 2rem; }
   .project-tile { padding: 18px; }
+}
+
+/* Large screens: explicit columns for symmetry */
+@media (min-width: 1025px) {
+  /* Projects: 3 columns (matches current item count) */
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    max-width: 1020px;
+  }
+  /* Credentials: 2 columns */
+  .credentials-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    max-width: 700px;
+  }
 }
