@@ -20,8 +20,15 @@
           return;
         }
 
+        // Prevent default jump, perform smooth scroll, and push hash to history
         event.preventDefault();
         targetSection.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
+        // Update the URL without forcing an extra jump, enabling Back/Forward between sections
+        history.pushState({ section: targetId }, "", targetId);
+        // Keep nav state in sync immediately
+        if (targetSection.id) {
+          highlightNavigation(targetSection.id);
+        }
       });
     });
   }
@@ -106,6 +113,22 @@
 
     sections.forEach((section) => sectionObserver.observe(section));
   }
+
+  // Handle browser Back/Forward to restore section position and active nav
+  window.addEventListener("popstate", () => {
+    const hash = window.location.hash;
+    const target = hash ? document.querySelector(hash) : null;
+    if (target) {
+      target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
+      if (target.id) {
+        highlightNavigation(target.id);
+      }
+    } else {
+      // No hash: go to top and clear active state
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      highlightNavigation("");
+    }
+  });
 
   const projectTiles = document.querySelectorAll(".project-tile");
   if (projectTiles.length && !prefersReducedMotion) {
