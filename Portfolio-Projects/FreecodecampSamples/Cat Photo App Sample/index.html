@@ -3,159 +3,170 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="CatPhotoApp — a simple demo page featuring cat photos, lists, and a form."
-    />
-    <title>CatPhotoApp</title>
-    <style>
-      /* Optional tiny polish (keeps FCC structure intact) */
-      :root { color-scheme: light dark; }
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.6; margin: 0; }
-      main { max-width: 70ch; margin: 2rem auto; padding: 0 1rem; }
-      img { max-width: 100%; height: auto; display: block; }
-      figure { margin: 1rem 0; }
-      fieldset { border: 1px solid currentColor; padding: .75rem 1rem; margin-block: 1rem; }
-      footer { border-top: 1px solid currentColor; margin-top: 3rem; padding: 1rem; font-size: .95rem; }
-      .note { background: rgba(0,0,0,.05); padding: .75rem 1rem; border-radius: .5rem; }
-    </style>
+    <meta name="description" content="CatPhotoApp — upgraded demo with responsive gallery, form preview, lightbox, and theme toggle." />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <title>CatPhotoApp — Enhanced</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-    <main>
-      <h1>CatPhotoApp</h1>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <h1 class="logo">CatPhotoApp+</h1>
+        <button type="button" id="theme-toggle" class="btn btn-ghost" aria-pressed="false" aria-label="Toggle theme">☾</button>
+      </div>
+      <div class="hero">
+        <img src="https://placekitten.com/1280/720" alt="Close-up portrait of a curious tabby cat with bright eyes" width="1280" height="720" loading="eager" fetchpriority="high" />
+        <div class="hero-copy container">
+          <h2>Purr-fectly Responsive</h2>
+          <p>Enjoy a clean, mobile‑first layout with upgraded imagery and interactive goodies.</p>
+          <a href="#gallery" class="btn">Browse Gallery</a>
+        </div>
+      </div>
+    </header>
 
-      <!-- Modification note (clearly states this version was edited) -->
+    <main class="container">
       <p class="note" role="status" aria-live="polite">
-        This project is a modified version of the original freeCodeCamp CatPhotoApp.
-        Last updated on <time datetime="2025-10-24">October 24, 2025</time>.
+        This project is a modernized version of the original freeCodeCamp CatPhotoApp. Last updated
+        <time datetime="2025-10-25">October 25, 2025</time>.
       </p>
 
-      <section aria-labelledby="photos-heading">
+      <section id="gallery" aria-labelledby="photos-heading">
         <h2 id="photos-heading">Cat Photos</h2>
         <p>
-          Everyone loves
-          <a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">
-            cute cats
-          </a>
-          online!
+          Everyone loves <a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">cute cats</a> online!
+          See more <a href="https://freecatphotoapp.com" target="_blank" rel="noopener noreferrer">cat photos</a> in our gallery.
         </p>
-        <p>
-          See more
-          <a href="https://freecatphotoapp.com" target="_blank" rel="noopener noreferrer">
-            cat photos
+
+        <div class="gallery-grid" role="list">
+          <a class="card lightbox-trigger" role="listitem" href="https://placekitten.com/1600/1067" data-caption="Playful tabby close‑up">
+            <img src="https://placekitten.com/600/400" alt="Playful tabby cat close-up" loading="lazy" width="600" height="400" />
+            <span class="card-caption">Playful tabby</span>
           </a>
-          in our gallery (opens in a new tab).
-        </p>
-        <a href="https://freecatphotoapp.com" target="_blank" rel="noopener noreferrer">
-          <img
-            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
-            alt="A cute orange cat lying on its back."
-            loading="lazy"
-          />
-        </a>
+          <a class="card lightbox-trigger" role="listitem" href="https://placekitten.com/1600/1000" data-caption="Sleepy ginger in sunlight">
+            <img src="https://placekitten.com/601/401" alt="Ginger cat sleeping in the sun" loading="lazy" width="601" height="401" />
+            <span class="card-caption">Sunny nap</span>
+          </a>
+          <a class="card lightbox-trigger" role="listitem" href="https://placekitten.com/1600/1040" data-caption="Blue‑eyed kitten portrait">
+            <img src="https://placekitten.com/602/402" alt="Blue-eyed kitten portrait" loading="lazy" width="602" height="402" />
+            <span class="card-caption">Blue eyes</span>
+          </a>
+          <a class="card lightbox-trigger" role="listitem" href="https://placekitten.com/1600/1080" data-caption="Cat behind leaves">
+            <img src="https://placekitten.com/603/403" alt="Cat peeking through green leaves" loading="lazy" width="603" height="403" />
+            <span class="card-caption">Hide & seek</span>
+          </a>
+          <a class="card lightbox-trigger" role="listitem" href="https://placekitten.com/1600/980" data-caption="Cat and coffee">
+            <img src="https://placekitten.com/604/404" alt="Cat near a cup of coffee" loading="lazy" width="604" height="404" />
+            <span class="card-caption">Morning vibes</span>
+          </a>
+          <a class="card lightbox-trigger" role="listitem" href="https://placekitten.com/1600/1200" data-caption="Curious whiskers">
+            <img src="https://placekitten.com/605/405" alt="Close-up of cat whiskers" loading="lazy" width="605" height="405" />
+            <span class="card-caption">Curious whiskers</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Recent uploads pulled from cloud storage -->
+      <section id="uploads" aria-labelledby="uploads-heading">
+        <h2 id="uploads-heading">Recent Uploads</h2>
+        <p class="help">Photos uploaded by visitors appear here with expiring links.</p>
+        <div class="gallery-grid" id="uploads-grid" role="list"></div>
+        <div style="margin-top:.75rem; display:flex; gap:.5rem; align-items:center;">
+          <button id="refresh-uploads" class="btn" type="button">Refresh</button>
+          <span id="uploads-status" class="help"></span>
+        </div>
       </section>
 
       <section aria-labelledby="lists-heading">
         <h2 id="lists-heading">Cat Lists</h2>
-
-        <h3>Things cats love:</h3>
-        <ul>
-          <li>catnip</li>
-          <li>laser pointers</li>
-          <li>lasagna</li>
-        </ul>
-
-        <figure>
-          <img
-            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
-            alt="A slice of lasagna on a plate."
-            loading="lazy"
-          />
-          <figcaption>Cats <em>love</em> lasagna.</figcaption>
-        </figure>
-
-        <h3>Top 3 things cats hate:</h3>
-        <ol>
-          <li>flea treatment</li>
-          <li>thunder</li>
-          <li>other cats</li>
-        </ol>
-
-        <figure>
-          <img
-            src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
-            alt="Two tabby kittens sleeping together on a couch."
-            loading="lazy"
-          />
-          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
-        </figure>
+        <div class="lists">
+          <div>
+            <h3>Things cats love</h3>
+            <ul>
+              <li>Catnip</li>
+              <li>Laser pointers</li>
+              <li>Lasagna</li>
+            </ul>
+          </div>
+          <figure>
+            <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate." loading="lazy" width="600" height="400" />
+            <figcaption>Cats <em>love</em> lasagna.</figcaption>
+          </figure>
+          <div>
+            <h3>Top 3 things cats hate</h3>
+            <ol>
+              <li>Flea treatment</li>
+              <li>Thunder</li>
+              <li>Other cats</li>
+            </ol>
+          </div>
+          <figure>
+            <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Two tabby kittens sleeping together on a couch." loading="lazy" width="600" height="400" />
+            <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section aria-labelledby="form-heading">
         <h2 id="form-heading">Cat Form</h2>
-        <form action="https://freecatphotoapp.com/submit-cat-photo" method="post">
+        <form action="https://freecatphotoapp.com/submit-cat-photo" method="post" class="card form-card" novalidate>
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-
-            <label for="indoor">
-              <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked />
-              Indoor
-            </label>
-
-            <label for="outdoor">
-              <input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor" />
-              Outdoor
-            </label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked /> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor" /> Outdoor</label>
           </fieldset>
 
           <fieldset>
             <legend>What's your cat's personality?</legend>
-
-            <label for="loving">
-              <input id="loving" type="checkbox" name="personality" value="loving" checked />
-              Loving
-            </label>
-
-            <label for="lazy">
-              <input id="lazy" type="checkbox" name="personality" value="lazy" />
-              Lazy
-            </label>
-
-            <label for="energetic">
-              <input id="energetic" type="checkbox" name="personality" value="energetic" />
-              Energetic
-            </label>
+            <label><input id="loving" type="checkbox" name="personality" value="loving" checked /> Loving</label>
+            <label><input id="lazy" type="checkbox" name="personality" value="lazy" /> Lazy</label>
+            <label><input id="energetic" type="checkbox" name="personality" value="energetic" /> Energetic</label>
           </fieldset>
 
-          <label for="catphotourl" class="visually-hidden">Cat photo URL</label>
-          <input
-            id="catphotourl"
-            type="url"
-            name="catphotourl"
-            placeholder="Cat photo URL"
-            inputmode="url"
-            required
-          />
-
-          <button type="submit">Submit</button>
+          <div class="field-row">
+            <label for="catphotourl" class="visually-hidden">Cat photo URL</label>
+            <input id="catphotourl" type="url" name="catphotourl" placeholder="Paste a cat photo URL (https://...)" inputmode="url" required />
+            <button type="submit" class="btn">Submit</button>
+          </div>
+          <p id="url-help" class="help">Paste a direct image URL to preview.</p>
+          <div id="preview" class="preview" aria-live="polite"></div>
         </form>
+
+        <!-- Upload to cloud storage (Supabase) -->
+        <div class="card form-card" id="upload-card">
+          <h3 style="margin:.25rem 0 .5rem">Upload Your Cat</h3>
+          <p class="help">Select a cat image (max 600KB). Files are stored in a public bucket; links do not expire.</p>
+          <div class="field-row" style="flex-wrap:wrap; gap:.75rem">
+            <input id="cat-file" type="file" accept="image/*" />
+            <label style="display:flex; align-items:center; gap:.4rem; font-size:.95rem; color:var(--muted)"><input id="compress" type="checkbox" checked /> Compress before upload</label>
+            <button id="upload-btn" class="btn" type="button">Upload</button>
+            <progress id="up-progress" value="0" max="100" style="width:100%"></progress>
+          </div>
+          <div id="up-preview" class="preview" aria-live="polite" style="margin-top:.5rem"></div>
+          <p id="upload-msg" class="help" style="margin-top:.5rem"></p>
+          <div class="field-row" id="copy-row" style="display:none; gap:.5rem; flex-wrap:wrap; margin-top:.25rem">
+            <button id="copy-link" class="btn" type="button" disabled>Copy link</button>
+            <span id="final-size" class="help"></span>
+          </div>
+          </div>
       </section>
     </main>
 
-    <footer>
-      <p>
-        © <span id="year">2025</span> Brian Rey Vargas.
-        Based on <a href="https://www.freecodecamp.org" rel="noopener noreferrer">freeCodeCamp.org</a>.
-      </p>
-      <p>
-        Modified version of the freeCodeCamp CatPhotoApp —
-        <time datetime="2025-10-24">October 24, 2025</time>.
-      </p>
-      <script>
-        // Keep the year current without affecting FCC tests.
-        document.getElementById('year').textContent = new Date().getFullYear();
-      </script>
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <button type="button" class="lightbox-close" aria-label="Close">×</button>
+      <figure class="lightbox-media">
+        <img id="lightbox-img" alt="Expanded cat image" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+
+    <footer class="site-footer">
+      <p>© <span id="year">2025</span> Brian Rey Vargas. Based on <a href="https://www.freecodecamp.org" rel="noopener noreferrer">freeCodeCamp.org</a>.</p>
+      <p>Modernized on <time datetime="2025-10-25">October 25, 2025</time>.</p>
     </footer>
+
+    <!-- Supabase client for storage uploads -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
   </body>
-</html>
+  </html>

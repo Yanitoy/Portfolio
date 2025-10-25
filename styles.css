@@ -455,10 +455,10 @@ footer {
 
 /* Large screens: explicit columns for symmetry */
 @media (min-width: 1025px) {
-  /* Projects: 3 columns (matches current item count) */
+  /* Projects: keep 2 columns so two cards stay centered/symmetrical */
   .project-grid {
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
-    max-width: 1020px;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    max-width: 860px; /* 2 columns + gaps for balanced gutters */
   }
   /* Credentials: 2 columns */
   .credentials-grid {
